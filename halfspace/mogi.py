@@ -10,7 +10,7 @@ class MogiSource( Source ):
   def __init__( self, xyz, delta=0, azimuth=0 ):
     self.xyz = numpy.array(xyz)
     azimuth *= numpy.pi/180
-    self.rotmat = numpy.array( [[numpy.cos(azimuth), -numpy.sin(azimuth),0],[numpy.sin(azimuth),numpy.cos(azimuth),0],[0,0,1]] )
+    self.rotmat = numpy.array( [[numpy.cos(azimuth), numpy.sin(azimuth),0],[-numpy.sin(azimuth),numpy.cos(azimuth),0],[0,0,1]] )
     assert self.xyz.ndim == 1 and self.xyz.size == 3
 
   def displacement( self, xyz, poisson ):

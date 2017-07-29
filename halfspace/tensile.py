@@ -15,7 +15,7 @@ class TensileSource( Source ):
     self.cos2d = numpy.cos(2.*self.delta)
     self.sind  = numpy.sin(self.delta)
     self.sin2d = numpy.sin(2.*self.delta)
-    self.rotmat = numpy.array( [ [numpy.cos(self.azimuth),-numpy.sin(self.azimuth),0] , [numpy.sin(self.azimuth),numpy.cos(self.azimuth),0],[0,0,1] ] )
+    self.rotmat = numpy.array( [ [numpy.cos(self.azimuth),numpy.sin(self.azimuth),0] , [-numpy.sin(self.azimuth),numpy.cos(self.azimuth),0],[0,0,1] ] )
   
   def displacement( self, xyz, poisson=0.25 ):  
     xyz = numpy.asarray( xyz )
